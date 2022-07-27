@@ -100,7 +100,33 @@ const App = () => {
       <Option value="40">"B","Conservation of Foreign Exchange & Prevention of Smuggling Activities Act "</Option>
       <Option value="41">"B","Other SLL Offences (not included above)"</Option>
       <Option value="42">"C","Civil cases"</Option>
+    </Select> 
+    <br></br><br></br>
+    <Title level={5}>Sentence</Title>
+
+    <Select
+      defaultValue="Sentence"
+      style={{
+        width: 400,
+      }}
+      onChange={handleChange}
+    >
+      <Option value="capital_punishment">Capital Punishment</Option>
+      <Option value="period_of_sentence">Period of Sentence</Option>
+      <Option value="life_imprisonment">Life imprisonment (i.e 14 years and above)</Option>
+      <Option value="temporary_imprisonment_1">10 - 13 years</Option>
+      <Option value="temporary_imprisonment_2">7 - 9 years</Option>
+      <Option value="temporary_imprisonment_3">5 - 6 years</Option>
+      <Option value="temporary_imprisonment_4">2 - 4 years</Option>
+      <Option value="temporary_imprisonment_5">1 - less than 2years</Option>
+      <Option value="temporary_imprisonment_6">6 months - less than 1 year</Option>
+      <Option value="temporary_imprisonment_7">3 months - less than 6 months</Option>
+      <Option value="temporary_imprisonment_3">less than 3 months</Option>
+
     </Select>
+      
+      
+      
       </Modal>
     </>
   );
