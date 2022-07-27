@@ -1,25 +1,72 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import 'antd/dist/antd.css';
 import './App.css';
+import { Button, Modal } from 'antd';
+import { Typography } from 'antd';
+import { Select } from 'antd';
 
-function App() {
+const { Title } = Typography;
+const { Option } = Select;
+
+const handleChange = (value) => {
+  console.log(`selected ${value}`);
+};
+
+const App = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Button type="primary" onClick={showModal}>
+        Open Modal
+      </Button>
+      <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+       
+        <Title level={5}>Type</Title>
+        <Select
+      defaultValue="lucy"
+      style={{
+        width: 120,
+      }}
+      onChange={handleChange}
+    >
+      <Option value="1">Undertrials</Option>
+      <Option value="2">Detenus</Option>
+      <Option value="3">Escapees</Option>
+      <Option value="4">Deaths</Option>
+      <Option value="5">Parole</Option>
+      <Option value="6">others</Option>
+    </Select>
+    <br></br>
+    <Select
+      defaultValue="lucy"
+      style={{
+        width: 120,
+      }}
+      onChange={handleChange}
+    >
+      <Option value="ayush">Ayush</Option>
+      <Option value="lucy">Lucyrsdfhh</Option>
+      
+      <Option value="Yiminghe">yiminghe</Option>
+    </Select>
+      </Modal>
+    </>
   );
-}
+};
+
+
 
 export default App;
